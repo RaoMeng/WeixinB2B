@@ -1,0 +1,47 @@
+<import src="../../common/view.wxml" />
+
+<template name="purchase_list">
+     <swiper-item style="height:100%;width:100%;display: flex; justify-content: center; align-content: center;">
+          <!-- <swiper-item style="height:100%;width:100%;"> -->
+          <view wx:if="{{purchaseList == undefined||purchaseList==null}}" class='empty_view'>
+               <image style="width:100rpx;height:100rpx;margin:0 auto;" src='../../res/images/loading.gif'></image>
+               <text style='color:gray;font-size:32rpx;margin-top:16rpx; margin:0 auto;'>数据加载中...</text>
+          </view>
+          <view wx:elif="{{purchaseList.length==0}}" class='empty_view'>
+               <image src='../../res/images/ic_empty.png' style='width:130rpx;height:130rpx;margin:0 auto' mode="scaleToFill"></image>
+               <text style='color:gray;font-size:28rpx; margin:0 auto;'>{{emptyMessage}}</text>
+          </view>
+          <scroll-view wx:else class='common_b2b_scroll' scroll-y='true' bindscroll='{{scrollTap}}' bindscrolltolower="{{scrolltolower}}" bindscrolltoupper="{{scrolltoupper}}" scroll-top='{{scrollTop}}' upper-threshold='5' bindtouchend='{{scrollTouchEnd}}' bindtouchstart='{{scrollTouchStart}}'>
+               <!-- <view class='downRefresh'>{{refreshText}}</view> -->
+               <navigator wx:for='{{purchaseList}}' url='../purchase_detail/purchase_detail?id={{item.id}}&state={{item.billState}}&json={{item.jsonData}}&index={{index}}&moduleIndex={{currentIndex}}' class='module_item'>
+                    <view class='content'>
+                         <!-- <template is="row" data="{{caption_class:'company',value_class:'date',caption:item.companyName,value:item.billDate}}" /> -->
+                         <text style='width:100%;background-color:#e9e9e9;font-size:28rpx;padding:5px;'>{{item.companyName}}</text>
+                         <view class='body'>
+                              <view class='left'>
+                                   <!-- 多个模板内具有相同的属性，使用对象封装  -->
+                                   <template is="row" data="{{...common_row,caption:'单号：',value:item.billNum}}" />
+                                   <template is="row" data="{{...common_row,caption:'币别：',value:item.currency}}" />
+                                   <template is="row" data="{{caption_class:'caption',value_class:'money',caption:'金额：',value:item.money}}" />
+                                   <template is="row" data="{{...common_row,caption:'时间：',value:item.billDate}}" />
+                              </view>
+                              <view class='right'>
+                                   <view class='remain'>
+
+                                   </view>
+                                   <button wx:if="{{item.billState == 'todo'}}" class='purchaseTodo' size='mini' plain='true'>待回复</button>
+                                   <button wx:elif="{{item.billState == 'end'}}" class='purchaseEnd' size='mini' plain='true'>已结案</button>
+                                   <button wx:elif="{{item.billState == 'done'}}" class='purchaseDone' size='mini' plain='true'>已回复</button>
+                              </view>
+                         </view>
+                    </view>
+               </navigator>
+
+               <view wx:if="{{loadenable}}" class="loadmore">
+                    <image src='../../res/images/loading.gif' class="loading" mode="scaleToFill" style='margin:auto 0;'></image>
+                    <text style='margin-left:20rpx;'>正在加载更多</text>
+               </view>
+               <text wx:else class="loadmore">没有更多内容了</text>
+          </scroll-view>
+     </swiper-item>
+</template>

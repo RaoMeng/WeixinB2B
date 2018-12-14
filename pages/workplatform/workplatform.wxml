@@ -1,0 +1,18 @@
+<!--pages/gridview/gridview.wxml-->
+<import src="template.wxml" />
+
+<block wx:for="{{menuData}}">
+     <view class='moduleItem'>
+          <view class='titleview'>
+               <!-- <view class='sign'></view> -->
+               <text class='text'>{{item.moduleName}}</text>
+          </view>
+          <block wx:for="{{item.moduleList}}" wx:key="{{item.menuTag}}" wx:for-index="position" wx:for-item="content">
+               <!-- <template is="work_menu_Item" data="{{menuIcon:content.menuIcon,menuText:content.menuName}}" /> -->
+               <view class="{{selectedKey == content.menuTag?'menuItemSelectcted':'menuItem'}}" bindtap='menuSelect' data-key='{{content.menuTag}}' data-page='{{content.menuActivity}}'>
+                    <image class='menuIcon' src='{{content.menuIcon}}'></image>
+                    <text class='menuText'>{{content.menuName}}</text>
+               </view>
+          </block>
+     </view>
+</block>

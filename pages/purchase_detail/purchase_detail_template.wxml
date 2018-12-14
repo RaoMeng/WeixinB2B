@@ -1,0 +1,24 @@
+<import src="../../common/view.wxml" />
+
+<template name='purchase_detail_slave_enable'>
+     <template is="b2b_detail_header_row" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_header_row_value',caption:'编号',value:identifier}}" />
+     <template is="b2b_detail_header_row" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_header_row_value',caption:'产品',value:product}}" />
+     <template is="b2b_detail_header_row" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_header_row_value',caption:'规格型号',value:spec}}" />
+     <template is="b2b_detail_header_row" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_header_row_value',caption:'单价',value:unitPrice,inputType:'digit'}}" />
+     <template is="b2b_detail_slave_date_row" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_slave_row_value',caption:'交货日期',value:deliveryDate,bindDateChange:'deliveryDateChange',slavePosition:slavePosition}}"
+     />
+     <template is="b2b_detail_slave_input_unit_row" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_slave_row_value',caption:'数量',value:quantity,inputClass:'b2b_detail_slave_row_input',inputType:'number',unit:'PCS',inputListener:'quantityInputListener',slavePosition:slavePosition}}"
+     />
+     <template is="b2b_detail_slave_input_row" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_slave_row_value',caption:'备注',value:remarks,inputType:'text',inputListener:'remarksInputListener',slavePosition:slavePosition}}"
+     />
+</template>
+
+<template name='purchase_detail_slave_unable'>
+     <template is="b2b_detail_header_row" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_header_row_value',caption:'编号',value:identifier}}" />
+     <template is="b2b_detail_header_row" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_header_row_value',caption:'产品',value:product}}" />
+     <template is="b2b_detail_header_row" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_header_row_value',caption:'规格型号',value:spec}}" />
+     <template is="b2b_detail_header_row" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_header_row_value',caption:'单价',value:unitPrice}}" />
+     <template is="b2b_detail_header_row" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_header_row_value',caption:'交货日期',value:deliveryDate}}" />
+     <template is="b2b_detail_header_row" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_header_row_value',caption:'数量',value:quantity}}" />
+     <template is="b2b_detail_header_row" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_header_row_value',caption:'备注',value:remarks}}" />
+</template>

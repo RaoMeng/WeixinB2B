@@ -1,0 +1,7 @@
+{
+     "navigationBarTitleText": "客户采购订单",
+     "enablePullDownRefresh": false,
+     "usingComponents": {
+          "clearInput": "../../components/clearInput/clearInput"
+     }
+}

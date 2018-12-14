@@ -1,0 +1,22 @@
+<!--pages/publist_list/publist_list.wxml-->
+<import src="../../common/view.wxml" />
+<import src="public_template.wxml" />
+
+<view class='public_contain'>
+     <view style='width:100%'>
+          <clearInput wx:if='{{isVersionHigh}}' inputHint='数据编号/客户名称/物料名称' icon-class='common_search_img' input-class='common_search_input' confirmType='search' bind:inputListener='inputListener' bind:inputConfirm='searchEvent' />
+
+          <template wx:else is='search_input' data="{{hint:'数据编号/客户名称/物料名称',confirmTap:'searchEvent'}}" />
+
+          <view class='header_tab'>
+               <block wx:for="{{stateList}}">
+                    <view class="{{selectedIndex == index?'tab_item_selected':'tab_item_default'}}" bindtap='turnPage' data-index="{{index}}" hover-class='tab_item_hover'>{{item}}</view>
+               </block>
+          </view>
+     </view>
+
+     <swiper current='{{selectedIndex}}' bindchange='swiperChange' style='flex:1;'>
+          <template is='public_list' data="{{publicList:publicAll,loadEnable:allLoadEnable,common_row:common_row,scrolltolower:'allScrollLower',emptyMessage:allEmpty,currentIndex:1}}" />
+          <template is='public_list' data="{{publicList:publicDone,loadEnable:doneLoadEnable,common_row:common_row,scrolltolower:'doneScrollLower',emptyMessage:doneEmpty,currentIndex:2}}" />
+     </swiper>
+</view>

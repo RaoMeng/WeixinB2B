@@ -1,0 +1,20 @@
+<!--pages/purchase_detail/purchase_detail.wxml-->
+<import src="../../common/view.wxml" />
+<import src="purchase_detail_template.wxml" />
+
+<view wx:if="{{isLoading}}" class='empty_view'>
+     <image class='empty_icon' src='../../res/images/loading.gif'></image>
+     <text style='color:gray;font-size:28rpx;margin-top:16rpx;margin:0 auto;'>数据加载中...</text>
+</view>
+<view wx:else>
+     <view class='b2b_detail_header' style='margin-bottom:16rpx;'>
+          <template is="b2b_detail_header_row" wx:for='{{detailMainData}}' data="{{rowClass:'b2b_detail_header_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_header_row_value',caption:item.caption,value:item.value}}" />
+     </view>
+
+     <view class="{{purchaseDetailList.length==(index+1)?'b2b_detail_slave_nodash_item':'b2b_detail_slave_item'}}" wx:for='{{purchaseDetailList}}'>
+          <template is="{{item.isEnable?'purchase_detail_slave_enable':'purchase_detail_slave_unable'}}" data="{{identifier:item.identifier,product:item.product,spec:item.spec,unitPrice:item.unitPrice,deliveryDate:item.deliveryDate,quantity:item.quantity,remarks:item.remarks,deliveryDateChange:'deliveryDateChange',quantityInputListener:'quantityInputListener',remarksInputListener:'remarksInputListener',slavePosition:index}}"
+          />
+     </view>
+
+     <view class="{{isReplyable?'commonBtn':'viewHidden'}}" hover-class='commonBtnHover' bindtap='submitEvent' hover-stay-time='100' style='margin-bottom:60rpx;'>回复</view>
+</view>

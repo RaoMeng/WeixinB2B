@@ -1,0 +1,31 @@
+<template name="serviceModule">
+     <view class='serviceItem' style='width:{{moduleWidth}}px'>
+          <text class='title'>{{title}}</text>
+          <text class='description' style='color:{{desColor}}'>{{description}}</text>
+          <image class='icon' src='{{iconSrc}}'></image>
+     </view>
+</template>
+
+<template name="grayLine">
+     <view style='width:100%;height:{{lineHeight}}rpx;background-color:#ccc'></view>
+</template>
+
+<template name="serviceListItem">
+     <view class='serviceListItem' bindtap='{{serviceItemTap}}'>
+          <image class='image' mode='scaleToFill' src='{{imageUrl}}'></image>
+
+          <view class='content'>
+               <view class='title'>
+                    <text class='company'>{{companyName}}</text>
+                    <text class='type'>{{type}}</text>
+               </view>
+               <text class='address'>{{address}}</text>
+               <view class='title'>
+                    <image src='../../res/images/icon_tel.png' style='width:24rpx;height:24rpx;margin-right:10rpx;'></image>
+                    <text class='phone'>{{phone}}</text>
+               </view>
+          </view>
+
+          <button class='orderSimple' hover-class='orderCheck' size='mini'>预约</button>
+     </view>
+</template>

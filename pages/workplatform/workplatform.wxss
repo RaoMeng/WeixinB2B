@@ -1,0 +1,62 @@
+/* pages/gridview/gridview.wxss */
+
+.menuItem, .menuItemSelectcted {
+     display: inline-block;
+     text-align: center;
+     margin-top: 26rpx;
+     width: 25%;
+}
+
+.menuItem {
+     background-color: white;
+}
+
+.menuItemSelectcted {
+     background-color: skyblue;
+}
+
+.menuIcon {
+     width: 36rpx;
+     height: 36rpx;
+}
+
+.menuText {
+     font-size: 26rpx;
+     width: 100%;
+     margin-top: 18rpx;
+     line-height: 30rpx;
+     display: block;
+}
+
+.moduleItem {
+     padding: 20rpx;
+     border-bottom: 1rpx solid gray;
+}
+
+.moduleItem .titleview {
+     display: flex;
+     flex-direction: row;
+     height: 36rpx;
+     vertical-align: center;
+}
+
+.titleview:before {
+     content: "";
+     width: 16rpx;
+     height: 28rpx;
+     position: relative;
+     top: 6rpx;
+     background-color: skyblue;
+}
+
+.moduleItem .titleview .sign {
+     width: 16rpx;
+     height: 100%;
+     margin-right: 20rpx;
+     background-color: skyblue;
+}
+
+.moduleItem .titleview .text {
+     padding-left: 10rpx;
+     font-size: 26rpx;
+}

@@ -1,0 +1,7 @@
+{
+     "navigationBarTitleText": "客户询价单",
+     "enablePullDownRefresh": false,
+     "usingComponents": {
+          "clearInput": "../../components/clearInput/clearInput"
+     }
+}

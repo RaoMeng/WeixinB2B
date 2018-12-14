@@ -1,0 +1,189 @@
+/* pages/service_appointment/service_appointment.wxss */
+
+page {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     position: relative;
+}
+
+.serviceHeader {
+     height: 60rpx !important;
+     padding: 10rpx;
+     width: 100%;
+     position: fixed;
+     display: flex;
+     background: #fff;
+     top: 0;
+     flex-direction: row;
+     align-items: center;
+     z-index: 10;
+}
+
+.serviceBody {
+     width: 100%;
+     position: absolute;
+     top: 80rpx;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     /* margin-top: 80rpx; */
+}
+
+.location {
+     width: 200rpx;
+     height: 100%;
+     background-color: #ccc;
+     border-radius: 50rpx;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+}
+
+.location .icon {
+     width: 36rpx;
+     height: 36rpx;
+     margin-left: 24rpx;
+}
+
+.location .text {
+     font-size: 26rpx;
+     color: white;
+     margin-left: 16rpx;
+}
+
+.search {
+     background: #f4f4f4;
+     position: absolute;
+     left: 220rpx;
+     right: 30rpx;
+     top: 10rpx;
+     bottom: 10rpx;
+     border-radius: 50rpx;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+}
+
+.search .icon {
+     width: 36rpx;
+     height: 36rpx;
+     margin-left: 16rpx;
+}
+
+.search .input {
+     font-size: 26rpx;
+     width: 100%;
+     padding-left: 10rpx;
+     z-index: 2;
+}
+
+.serviceItem {
+     display: inline-table;
+     text-align: center;
+     border-radius: 10rpx;
+     border: 1px solid #f4f4f4;
+}
+
+.serviceItem .title {
+     color: black;
+     font-weight: bold;
+     font-size: 28rpx;
+     display: block;
+     margin-top: 10rpx;
+}
+
+.serviceItem .description {
+     font-size: 22rpx;
+}
+
+.serviceItem .icon {
+     width: 80rpx;
+     height: 80rpx;
+     display: block;
+     margin: 0 auto;
+     margin-bottom: 10rpx;
+}
+
+.hotRecommend {
+     display: block;
+     width: 100%;
+     height: 60rpx;
+     line-height: 60rpx;
+     font-size: 26rpx;
+     text-align: center;
+     /* 阴影效果，文字偏移 */
+     text-shadow: green 1rpx 1rpx;
+}
+
+.serviceListItem {
+     width: 100%;
+     height: 172rpx;
+     padding: 16rpx;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     position: relative;
+     border-bottom: 1rpx solid #ccc;
+     box-sizing: border-box;
+}
+
+.serviceListItem .image {
+     width: 140rpx;
+     height: 140rpx;
+     border-radius: 20rpx;
+     margin-right: 16rpx;
+}
+
+.serviceListItem .content {
+     display: flex;
+     flex-direction: column;
+     position: absolute;
+     left: 166rpx;
+     right: 16rpx;
+     top: 16rpx;
+     bottom: 16rpx;
+}
+
+.content .title {
+     display: flex;
+     height: 40rpx;
+     flex-direction: row;
+     align-items: center;
+}
+
+.content .title .company {
+     font-size: 28rpx;
+     font-weight: bold;
+     color: black;
+     flex: 1;
+}
+
+.content .title .type {
+     font-size: 24rpx;
+     color: gray;
+}
+
+.content .address {
+     font-size: 24rpx;
+     height: 60rpx;
+     color: gray;
+}
+
+.content .phone {
+     font-size: 24rpx;
+     color: green;
+}
+
+.orderSimple, .orderCheck {
+     color: white;
+     font-size: 18rpx;
+     background: skyblue;
+     position: absolute;
+     right: 16rpx;
+     bottom: 16rpx;
+}
+
+.orderCheck {
+     background: blue;
+}

@@ -1,0 +1,22 @@
+/* pages/public_done_detail/public_done_detail.wxss */
+
+Page {
+     background: white;
+     width: 100%;
+     height: 100%;
+}
+
+.public_done_title {
+     display: inline-block;
+     background-color: #deeffa;
+     padding: 5rpx 32rpx 5rpx 16rpx;
+     border-top: #33a2ee solid 1rpx;
+     border-right: #33a2ee solid 1rpx;
+     border-bottom: #33a2ee solid 1rpx;
+     border-top-right-radius: 40rpx;
+     border-bottom-right-radius: 40rpx;
+     margin-top: 10rpx;
+     color: #33a2ee;
+     font-size: 28rpx;
+     font-weight: bold;
+}

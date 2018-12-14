@@ -1,0 +1,37 @@
+<!--pages/service_appointment/service_appointment.wxml-->
+<import src="template.wxml" />
+
+<view class='serviceHeader' style='height:100rpx'>
+     <view class='location'>
+          <image bindtap='getLocalLocation' class='icon' src='../../res/images/addr_bule.png' mode='scaleToFill' />
+          <text class='text' bindtap='selectCity'>{{location}}</text>
+     </view>
+     <view class='search'>
+          <image class='icon' src='../../res/images/search.png' mode='scaleToFill' />
+          <input class='input' placeholder='请输入商家店名' bindinput='searchEvent'></input>
+     </view>
+</view>
+
+<view class='serviceBody'>
+     <template wx:for="{{moduleList}}" is="serviceModule" data="{{title:item.title,description:item.info,iconSrc:item.icon,moduleWidth:moduleWidth,desColor:item.color}}" />
+
+     <template is="grayLine" data="{{lineHeight:20}}" />
+
+     <swiper style="width:100%;height:180rpx;" indicator-dots autoplay interval='2000' circular indicator-active-color='#eee'>
+          <swiper-item style="width:100%;height:100%;" wx:for="{{imageUrls}}">
+               <image style='width:100%;height:100%' mode='scaleToFill' src='{{item}}'></image>
+          </swiper-item>
+     </swiper>
+
+     <template is="grayLine" data="{{lineHeight:20}}" />
+     <text class='hotRecommend'>---热门推荐---</text>
+     <template is="grayLine" data="{{lineHeight:1}}" />
+
+     <template is="serviceListItem" wx:for="{{serviceArray}}" data="{{serviceItemTap:'serviceItemTap',imageUrl:item.imgUrl,companyName:item.companyName,type:item.industry,address:item.address,phone:item.phone}}" />
+
+     <view wx:if="{{loadenable}}" class="loadmore">
+          <image src='../../res/images/loading.gif' class="loading" mode="scaleToFill" style='margin:auto 0;'></image>
+          <text style='margin-left:20rpx;'>正在加载更多</text>
+     </view>
+     <text wx:else class="loadmore">没有更多内容了</text>
+</view>

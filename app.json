@@ -1,0 +1,25 @@
+{
+     "pages": [
+          "pages/workplatform/workplatform",
+          "pages/b2b_login_main/b2b_login_main",
+          "pages/index/index",
+          "pages/b2b_login/b2b_login",
+          "pages/b2b_main/b2b_main",
+          "pages/purchase_list/purchase_list",
+          "pages/customer_list/customer_list",
+          "pages/public_list/public_list",
+          "pages/purchase_detail/purchase_detail",
+          "pages/customer_detail/customer_detail",
+          "pages/public_todo_detail/public_todo_detail",
+          "pages/public_done_detail/public_done_detail",
+          "pages/service_appointment/service_appointment",
+          "pages/select_city/select_city"
+     ],
+     "window": {
+          "backgroundTextStyle": "light",
+          "backgroundColor": "#4F9CD1",
+          "navigationBarBackgroundColor": "#4F9CD1",
+          "navigationBarTitleText": "UAS|B2B商务",
+          "navigationBarTextStyle": "white"
+     }
+}

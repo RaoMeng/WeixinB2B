@@ -1,0 +1,2 @@
+<!--pages/select_city/select_city.wxml-->
+<SelectCitiesView bind:citySelect='onCitySelect' cityListLetter='cityListLetter' cityListItem='cityListItem'></SelectCitiesView>

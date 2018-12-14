@@ -1,0 +1,38 @@
+<template name='b2b_detail_quote_unable_row'>
+     <view class='b2b_detail_quote_row'>
+          <view style='flex:2;justify-content:center;padding-left:0;' class='b2b_detail_quote_item'>{{lineNum}}</view>
+          <view style='flex:4;' class='b2b_detail_quote_item'>
+               <view style='width:60rpx;'>>=</view>
+               <view style='flex:1' data-position='{{position}}'>{{amount}}</view>
+          </view>
+          <view style='flex:4;' class='b2b_detail_quote_item' data-position='{{position}}'>{{unitPrice}}</view>
+     </view>
+</template>
+
+<template name='b2b_detail_quote_enable_row'>
+     <view class='b2b_detail_quote_row'>
+          <view style='flex:2;justify-content:center;padding-left:0;' class='b2b_detail_quote_item'>{{lineNum}}</view>
+          <view style='flex:4;' class='b2b_detail_quote_item'>
+               <view style='width:60rpx;'>>=</view>
+               <input style='flex:1' bindinput='{{amountInputListener}}' value='{{amount}}' data-position='{{position}}' type='digit'></input>
+          </view>
+          <input style='flex:4;' class='b2b_detail_quote_item' value='{{unitPrice}}' bindinput='{{unitPriceInputListener}}' data-position='{{position}}' type='digit'></input>
+          <view class='b2b_detail_quote_delete_item'>
+               <image style='width:34rpx;' src='../../res/images/ic_b2b_delete.png' mode='widthFix' bindtap='{{deleteTap}}' data-position='{{position}}' />
+          </view>
+     </view>
+</template>
+
+
+<template name='b2b_detail_quote_first_row'>
+     <view class='b2b_detail_quote_row'>
+          <view style='flex:2;justify-content:center;padding-left:0;' class='b2b_detail_quote_item'>{{lineNum}}</view>
+          <view style='flex:4;' class='b2b_detail_quote_item'>
+               <view style='width:60rpx;'>>=</view>
+               <view style='flex:1' bindinput='{{amountInputListener}}' data-position='{{position}}'>0</view>
+          </view>
+          <input style='flex:4;' class='b2b_detail_quote_item' value='{{unitPrice}}' bindinput='{{unitPriceInputListener}}' data-position='{{position}}' type='digit'></input>
+          <view class='b2b_detail_quote_delete_item'>
+          </view>
+     </view>
+</template>

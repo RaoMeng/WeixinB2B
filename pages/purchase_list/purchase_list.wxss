@@ -1,0 +1,13 @@
+/* pages/purchase_list/purchase_list.wxss */
+
+page {
+     height: 100%;
+}
+
+.purchase_contain {
+     display: flex;
+     flex-flow: column;
+     flex-direction: column;
+     height: 100%;
+}
+

@@ -1,0 +1,6 @@
+<template name="work_menu_Item">
+     <view class='menuItem'>
+          <image class='icon' src='{{menuIcon}}'></image>
+          <text class='text'>{{menuText}}</text>
+     </view>
+</template>

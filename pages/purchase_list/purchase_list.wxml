@@ -1,0 +1,32 @@
+<!--pages/purchase_list/purchase_list.wxml-->
+<import src="../../common/view.wxml" />
+<import src="purchase_template.wxml" />
+
+<view class='purchase_contain'>
+     <!-- <view style='position: fixed;top: 0;display: flex;flex-direcation:column;'> -->
+     <view style='width:100%;'>
+          <clearInput wx:if='{{isVersionHigh}}' inputHint='数据编号/客户名称/物料名称' icon-class='common_search_img' input-class='common_search_input' confirmType='search' bind:inputListener='inputListener' bind:inputConfirm='searchEvent' />
+
+          <template wx:else is='search_input' data="{{hint:'数据编号/客户名称/物料名称',confirmTap:'searchEvent'}}" />
+
+          <view class='header_tab'>
+               <block wx:for="{{stateList}}">
+                    <view class="{{selectedIndex == index?'tab_item_selected':'tab_item_default'}}" bindtap='turnPage' data-index="{{index}}" hover-class='tab_item_hover'>{{item}}</view>
+               </block>
+          </view>
+     </view>
+     <!-- </view> -->
+
+     <!-- <view style='height:100%; display:flex;flex-direction:column;overflow: scroll;'> -->
+     <swiper current='{{selectedIndex}}' bindchange='swiperChange' style='flex:1;'>
+          <template is="purchase_list" data="{{purchaseList:purchaseAll,common_row:common_row,scrolltolower:'allScrollLower',loadenable:allLoadEnable,scrollHeight:scrollHeight,refreshText:allRefreshText,scrolltoupper:'allScrollUpper',scrollTouchEnd:'allTouchEnd',scrollTap:'allScrollTap',scrollTop:allScrollTop,scrollTouchStart:'allTouchStart',emptyMessage:allEmpty,currentIndex:1}}"
+          />
+          <template is="purchase_list" data="{{purchaseList:purchaseTodo,common_row:common_row,scrolltolower:'todoScrollLower',loadenable:todoLoadEnable,scrollHeight:scrollHeight,refreshText:todoRefreshText,scrolltoupper:'todoScrollUpper',scrollTouchEnd:'todoTouchEnd',scrollTap:'todoScrollTap',scrollTop:todoScrollTop,scrollTouchStart:'todoTouchStart',emptyMessage:todoEmpty,currentIndex:2}}"
+          />
+          <template is="purchase_list" data="{{purchaseList:purchaseDone,common_row:common_row,scrolltolower:'doneScrollLower',loadenable:doneLoadEnable,scrollHeight:scrollHeight,refreshText:doneRefreshText,scrolltoupper:'doneScrollUpper',scrollTouchEnd:'doneTouchEnd',scrollTap:'doneScrollTap',scrollTop:doneScrollTop,scrollTouchStart:'doneTouchStart',emptyMessage:doneEmpty,currentIndex:3}}"
+          />
+          <template is="purchase_list" data="{{purchaseList:purchaseEnd,common_row:common_row,scrolltolower:'endScrollLower',loadenable:endLoadEnable,scrollHeight:scrollHeight,refreshText:endRefreshText,scrolltoupper:'endScrollUpper',scrollTouchEnd:'endTouchEnd',scrollTap:'endScrollTap',scrollTop:endScrollTop,scrollTouchStart:'endTouchStart',emptyMessage:endEmpty,currentIndex:4}}"
+          />
+     </swiper>
+     <!-- </view> -->
+</view>

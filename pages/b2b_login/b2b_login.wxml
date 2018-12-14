@@ -1,0 +1,13 @@
+<view class='login_header' id='header'>
+     <image class="main_icon" src="../../res/images/ic_b2b_login_notice.png" mode="center"></image>
+
+     <text class="login_title">请选择以下企业登录</text>
+
+     <text class='login_notice_text'>已绑定企业</text>
+</view>
+
+<scroll-view class='login_scroll' scroll-y>
+     <navigator id="body" wx:for="{{loginAccount}}" class='item' url='../b2b_main/b2b_main?companyId={{item.id}}&companyEnuu={{item.enuu}}&companyCode={{item.businessCode}}&companyName={{item.name}}'>
+          <text class='content'>{{item.name}}</text>
+     </navigator>
+</scroll-view>

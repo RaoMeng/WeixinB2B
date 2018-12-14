@@ -1,0 +1,11 @@
+/* pages/publist_list/publist_list.wxss */
+page {
+     height: 100%;
+}
+
+.public_contain {
+     display: flex !important;
+     flex-flow: column;
+     flex-direction: column;
+     height: 100%;
+}

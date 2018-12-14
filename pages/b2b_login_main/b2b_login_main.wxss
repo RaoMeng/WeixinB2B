@@ -1,0 +1,47 @@
+/* pages/b2b_login_main/b2b_login_main.wxss */
+
+Page {
+     width: 100%;
+}
+
+.loginTitle {
+     display: block;
+     font-size: 25px;
+     font-weight: bold;
+     margin-top: 54rpx;
+     margin-left: 34rpx;
+     margin-bottom: 30rpx;
+}
+
+.login_input {
+     display: -webkit-flex;
+     padding: 20rpx 12rpx;
+     font-size: 30rpx;
+     border-bottom: 1rpx solid #dedede;
+     align-items: center;
+     margin: 0 24rpx;
+}
+
+.login_icon {
+     width: 32rpx;
+     height: 32rpx;
+     vertical-align: center;
+}
+
+.loginBtn, .loginBtnHover {
+     display: block;
+     color: white;
+     font-size: 32rpx;
+     padding: 8px;
+     border-radius: 5px;
+     margin: 56rpx 40rpx 0 40rpx;
+     text-align: center;
+}
+
+.loginBtn {
+     background: #33a2ee;
+}
+
+.loginBtnHover {
+     background: #2D84C0;
+}

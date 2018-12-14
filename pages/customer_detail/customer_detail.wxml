@@ -1,0 +1,38 @@
+<!--pages/customer_detail/customer_detail.wxml-->
+<import src="../../common/view.wxml" />
+<import src="customer_detail_template.wxml" />
+
+<view wx:if="{{isLoading}}" class='empty_view'>
+     <image class='empty_icon' src='../../res/images/loading.gif'></image>
+     <text style='color:gray;font-size:28rpx;margin-top:16rpx;margin:0 auto;'>数据加载中...</text>
+</view>
+<view wx:else>
+     <view class='b2b_detail_header' style='margin-bottom:16rpx;'>
+          <template is="b2b_detail_header_row" wx:for='{{detailMainData}}' data="{{rowClass:'b2b_detail_header_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_header_row_value',caption:item.caption,value:item.value}}" />
+     </view>
+
+     <template is="{{canQuote?'b2b_detail_slave_input_unit_row':'b2b_detail_slave_input_unit_unable_row'}}" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_slave_row_value',caption:'交货周期',value:leadTime,inputClass:'b2b_detail_slave_row_input',inputType:'digit',unit:'天',inputListener:'leadTimeInputListener'}}"
+     />
+     <template is="{{canQuote?'b2b_detail_slave_input_unit_row':'b2b_detail_slave_input_unit_unable_row'}}" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_slave_row_value',caption:'最小起订',value:minOrderQty,inputClass:'b2b_detail_slave_row_input',inputType:'digit',unit:'PCS',inputListener:'minOrderQtyInputListener'}}"
+     />
+     <template is="{{canQuote?'b2b_detail_slave_input_unit_row':'b2b_detail_slave_input_unit_unable_row'}}" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_slave_row_value',caption:'最小包装',value:minPackQty,inputClass:'b2b_detail_slave_row_input',inputType:'digit',unit:'PCS',inputListener:'minPackQtyInputListener'}}"
+     />
+
+     <template is="b2b_detail_header_row" data="{{rowClass:'b2b_detail_slave_row',captionClass:'b2b_detail_header_row_caption',valueClass:'b2b_detail_header_row_value',caption:'分段报价',value:''}}" />
+
+     <view style='box-sizing:border-box;margin-top:6rpx;'>
+          <view class='b2b_detail_quote_row'>
+               <view style='flex:2;justify-content:center;padding-left:0;' class='b2b_detail_quote_title'>段数</view>
+               <view style='flex:4;' class='b2b_detail_quote_title'>分段数量</view>
+               <view style='flex:4;' class='b2b_detail_quote_title'>分段单价</view>
+               <view class="{{canQuote?'b2b_detail_quote_add_item':'viewHidden'}}">
+                    <image style='width:34rpx;' src='../../res/images/ic_b2b_add.png' mode='widthFix' bindtap='addTap' />
+               </view>
+          </view>
+
+          <template is="{{canQuote?(index==0?'b2b_detail_quote_first_row':'b2b_detail_quote_enable_row'):'b2b_detail_quote_unable_row'}}" wx:for='{{quotePriceList}}' data="{{lineNum:index+1,amount:item.amount,unitPrice:item.price,amountInputListener:'amountInputListener',unitPriceInputListener:'unitPriceInputListener',deleteTap:'deleteTap',position:index}}"
+          />
+     </view>
+
+     <view class="{{canQuote?'commonBtn':'viewHidden'}}" hover-class='commonBtnHover' bindtap='submitEvent' hover-stay-time='100' style='margin-bottom:60rpx;'>报价</view>
+</view>

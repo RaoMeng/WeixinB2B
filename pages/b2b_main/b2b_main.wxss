@@ -1,0 +1,69 @@
+/* pages/b2b_main/b2b_main.wxss */
+
+Page {
+     background-color: #f3f3f3;
+}
+
+.main_header {
+     display: flex;
+     flex-direction: row;
+     /* padding-top: 36rpx;
+     padding-bottom: 36rpx; *//* background-color: white; */
+     height: 260rpx;
+}
+
+.main_header .swiper {
+     width: 100%;
+     height: 100%;
+}
+
+.main_header .item {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+}
+
+.main_header .item .image {
+     display: flex;
+     width: 100%;
+     height: 56rpx;
+     justify-content: center;
+     margin-bottom: 20rpx;
+}
+
+.main_header .item .name {
+     display: flex;
+     font-size: 26rpx;
+     justify-content: center;
+}
+
+.module_header {
+     display: flex;
+     flex-direction: row;
+     padding: 20rpx;
+}
+
+.module_header .name {
+     font-size: 26rpx;
+     color: black;
+}
+
+.module_header .dash {
+     flex: 1;
+     box-sizing: border-box;
+     height: 2px;
+     border-bottom: #ccc dashed 2rpx;
+     margin: auto 14rpx;
+}
+
+.module_header .all {
+     font-size: 24rpx;
+     color: #0096e3;
+     margin: auto 0;
+}
+
+.module_header .allIcon {
+     width: 14rpx;
+     height: 14rpx;
+     margin: auto 10rpx;
+}

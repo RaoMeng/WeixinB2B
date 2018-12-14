@@ -1,0 +1,6 @@
+{
+     "navigationBarTitleText": "我的商机",
+     "usingComponents": {
+          "clearInput": "../../components/clearInput/clearInput"
+     }
+}
